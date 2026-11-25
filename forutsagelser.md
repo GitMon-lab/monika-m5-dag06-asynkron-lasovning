@@ -37,8 +37,11 @@ console.log("efter"); // när allt är klar körs detta
 
 ## Tre meningar med egna ord
 
-1. JavaScript väntar inte på `setTimeout`, utan ...lägger lägger funktioner på kö
+1. JavaScript väntar inte på `setTimeout`, utan registrerar timern i bakgrunden, lägger lägger funktioner på kö (callback)
 
 2. En promise har tre tillstånd: ... pending(väntar på resultat) fulfilled(klart) rejected (fel/avvisat)
 
 3. `then` körs alltid ... asynkront(på linje) dvs efter all vanlig synkron kod (på rad) körts klart ochnär promise är klart
+
+pending (väntande), fulfilled (lyckad) och rejected (misslyckad).
+then() placerar sin callback i Microtask-kön när löftet blivit fulfilled och körs så fort den synkrona koden på stacken är klar.
