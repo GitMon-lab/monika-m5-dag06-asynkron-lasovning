@@ -32,8 +32,8 @@ console.log("efter"); // när allt är klar körs detta
 | 7 | slut på mjölk fel städer| fel: slut på mjölk städar| | felet först, eftersom det är fel går den till catch fel |
 | 8 | beställer sätter mig bullen klar kaffet klar|beställer sätter mig bullen klar kaffet klar | | |
 | 9 | väntar på båda bulle kaffe |väntar på båda ["kaffe","bulle"] | | missade array|
-| 10 | | | | |
-| 11 | | | | |
+| 10 | 1 6 3 4 5|1 6 3 2 4 5 | | missade 2 vanlig kod 1,6 promises i kö 3 sist settimeout 2 4 sist tömmer promises promises|
+| 11 | cab| a ab| | vanlig kod innan löften, första then, andra then, |
 
 ## Tre meningar med egna ord
 
