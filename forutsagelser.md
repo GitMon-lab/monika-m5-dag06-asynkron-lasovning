@@ -25,11 +25,13 @@ p.then((v) => console.log("then:", v)); //.then läggs på kö
 console.log("efter"); // när allt är klar körs detta
 
 | | inuti promise klart then efter | inuti promise efter then:klart | Nej | Konstruktor först . Allt inom new Promise körs direkt körs. Allt ionom .then() körs sist
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
+
+| 5 |sync promis | sync promis timeout | delvis | |
+
+| 6 | först? 6 7 |först? 6 7 | | synkron först sedan then|
+| 7 | slut på mjölk fel städer| fel: slut på mjölk städar| | felet först, eftersom det är fel går den till catch fel |
+| 8 | beställer sätter mig bullen klar kaffet klar|beställer sätter mig bullen klar kaffet klar | | |
+| 9 | väntar på båda bulle kaffe |väntar på båda ["kaffe","bulle"] | | missade array|
 | 10 | | | | |
 | 11 | | | | |
 
