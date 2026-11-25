@@ -12,22 +12,31 @@ Regler:
 
 | Snutt | Min gissning (i ordning) | Faktisk utskrift     | Rätt? | Min regel om jag hade fel |
 | ----- | ------------------------ | -------------------- | ----- | ------------------------- |
-| 1     | 1 2 3                    | 1 2 3                |
-| 2     | A C B                    | A C B                |
-| 3     | noll kort 300            | start noll kort lång |
-| 4     |                          |                      |       |                           |
-| 5     |                          |                      |       |                           |
-| 6     |                          |                      |       |                           |
-| 7     |                          |                      |       |                           |
-| 8     |                          |                      |       |                           |
-| 9     |                          |                      |       |                           |
-| 10    |                          |                      |       |                           |
-| 11    |                          |                      |       |                           |
+| 1     | 1 2 3                    | 1 2 3                |       |
+| 2     | A C B                    | A C B                |       |
+| 3     | noll kort 300            | start noll kort lång |       | Missade start             |
+| 4     |
+
+const p = new Promise((resolve) => { //konstruktor körs först inuti promise efter then klart Allt körsinte klart
+console.log("inuti promise");
+resolve("klart"); //Promise
+});
+p.then((v) => console.log("then:", v)); //.then läggs på kö
+console.log("efter"); // när allt är klar körs detta
+
+| | inuti promise klart then efter | inuti promise efter then:klart | Nej | Konstruktor först . Allt inom new Promise körs direkt körs. Allt ionom .then() körs sist
+| 5 | | | | |
+| 6 | | | | |
+| 7 | | | | |
+| 8 | | | | |
+| 9 | | | | |
+| 10 | | | | |
+| 11 | | | | |
 
 ## Tre meningar med egna ord
 
-1. JavaScript väntar inte på `setTimeout`, utan ...
+1. JavaScript väntar inte på `setTimeout`, utan ...lägger lägger funktioner på kö
 
-2. En promise har tre tillstånd: ...
+2. En promise har tre tillstånd: ... pending(väntar på resultat) fulfilled(klart) rejected (fel/avvisat)
 
-3. `then` körs alltid ...
+3. `then` körs alltid ... asynkront(på linje) dvs efter all vanlig synkron kod (på rad) körts klart ochnär promise är klart
